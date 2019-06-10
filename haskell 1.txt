@@ -1,18 +1,34 @@
 Haskell Question Set 1
 
 1.	maximum [1,2,3,4,5]
+
 2.	maxi a b = a `max` b / maxi a b = max a b
+
 3.	succ ( -5 )
+
 4.	square x = x * x
+
 5.	summ a b = a + b
+
 6.	summa a b c d = ( summ a b ) + ( summ c d )
+
 7.	grade x = if ( x > 90 ) then "A" else if ( x > 80 ) then "B" else if ( x > 70 ) then "C" else if ( x > 60 ) then "D" else "F"
+
 8.	xs = [3,1,4,1,5,9]
+
 9.	hs x = head x
+
 10.	ds = [[3,1,4,1,5], [9,2,6,5,3], [5,8,9,7,9]]
+
 11.	add x = xs ++ [x]
+
 12.	adds x = [x] ++ xs
-13.	“ubba”
-14.	“bubb”
-15.	‘b’
-16.	‘a’
+
+13.	â€œubbaâ€
+
+14.	â€œbubbâ€
+
+15.	â€˜bâ€™
+
+16.	â€˜aâ€™
+
