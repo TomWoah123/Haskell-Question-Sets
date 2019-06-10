@@ -1,0 +1,48 @@
+Haskell Question Set 7
+
+1. fromOrigin :: (RealFloat a) => [(a,a)] -> [a]
+   fromOrigin list = [ distance | (x,y) <- list, let distance = sqrt ( x^2 + y^2 ) ]
+
+2. closeEnough :: (RealFloat a) => [(a,a)] -> a ->[((a,a),a)]
+   closeEnough points d = [ ((fst x, snd x),distance) | x <- points, let distance = sqrt ( (fst x)^2 + (snd x)^2 ), distance < d ]
+
+3. article :: String -> String
+   article word = case word of ('a':_) -> "an " ++ word
+                               ('e':_) -> "an " ++ word
+                               ('i':_) -> "an " ++ word
+                               ('o':_) -> "an " ++ word
+                               ('u':_) -> "an " ++ word
+                                  word -> "a " ++ word
+
+4. plural :: Integer -> String -> String
+   plural num word = case num of 1 -> " You have a " ++ word
+                               num -> "You have " ++ (show num) ++ " " ++ word ++ "s"
+
+5. gpa :: Char -> String
+   gpa letter = case letter of 'A' -> "You have a 4.0 GPA."
+                               'a' -> "You have a 4.0 GPA."
+                               'B' -> "You have a 3.0 GPA."
+                               'b' -> "You have a 3.0 GPA."
+                               'C' -> "You have a 2.0 GPA."
+                               'c' -> "You have a 2.0 GPA."
+                               'D' -> "You have a 1.0 GPA."
+                               'd' -> "You have a 1.0 GPA."
+                               'F' -> "You have a 0.0 GPA."
+                               'f' -> "You have a 0.0 GPA."
+
+6. facto :: Integer -> Integer
+   facto 0 = 1
+   facto x = x * facto ( x - 1 )
+
+7. power :: Integer -> Integer -> Integer
+   power a 1 = a
+   power a n = a * power a (n - 1)
+
+8. fib :: Integer -> Integer
+   fib 0 = 0
+   fib 1 = 1
+   fib n = fib (n - 1) + fib (n - 2)
+
+9. reverseList :: [a] -> [a]
+   reverseList [] = []
+   reverseList (x:list) = reverseList list ++ [x]

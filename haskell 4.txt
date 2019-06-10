@@ -1,0 +1,35 @@
+Haskell Question Set 4
+
+1. funct1 list = zip [0..] list
+
+2. funct2 list = zip [(length list),(length list - 1)..1] list
+
+3. funct3 list = [ (x,y) | x <- list, y <- list, x /= y ]
+
+4. funct4 list1 list2 = zip list1 (reverse list2)
+
+5. funct5 tupList = [ x | x <- tupList, (fst x)^2 + (snd x)^2 <= 25 ]
+
+6. import Data.Char (ord)
+   funct6 = zip ['A'..'Z'] [(ord 'A')..(ord 'Z')]
+
+7. first (a,_,_) = a
+   second (_,b,_) = b
+   third (_,_,c) = c
+   funct7 colorList = [ x | x <- colorList, first x >= 0 && first x <= 255 && second x >= 0 && second x <= 255 && third x >= 0 && third x <= 255 ]
+
+8. funct8 = [ (x,y) | x <- ['a'..'h'], y <- [1..8] ]
+
+9. funct9 x y = [ (a,b,c) | a <- [x..y], b <- [x..y], c <- [x..y], ( a + b > c && a + c > b && b + c > a ) ]
+
+10. funct10 tupList = [ [snd x] | x <- tupList ]
+
+11. import Data.List
+    count x list = length $ filter ( == x ) $ list
+    funct11 list = [ (x,y) | x <- ( nub list ), y <- [ count x list ] ]
+
+12. import Data.Char (ord)
+    hash string = zip ( map ord string ) [ (length string - 1), (length string - 2)..0]
+    funct12 string = sum [ fst x * 31^(snd x) | x <- hash string ]
+
+13. funct13 listString = zip ( map funct12 listString ) listString

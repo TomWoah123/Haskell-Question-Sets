@@ -1,0 +1,40 @@
+Haskell Question Set 8
+
+1. number = (>0)
+
+2. isEven = (even)
+
+3. first = map ( \x -> fst x )
+ 
+4. square :: Integer -> [Integer]
+   square = \x -> map (^2) [1..x]
+
+5. reverseTup :: [(a,b)] -> [(b,a)]
+   reverseTup listTup = map ( \x -> ( snd x, fst x ) ) listTup
+
+6. We have been using filters without calling the word filter in list comprehensions
+
+7. goodMovies :: [(String,Integer)] -> Int
+   goodMovies movieList = length $ filter (\(a,b) -> b > 8) movieList
+
+8. triangle :: Integer -> Integer -> [(Integer,Integer,Integer)]
+   first (a,_,_) = a
+   second (_,b,_) = b
+   third (_,_,c) = c
+   triangle x y = filter ( \z -> ( first z + second z > third z && first z + third z > second z && second z + third z > first z ) ) $ [ (a,b,c) | a <- [x..y], b <- [x..y], c <- [x..y] ]
+
+9. putStrLn "Age: "
+   age <- getLine
+   putStrLn $ vote ( read age :: Int )
+
+   vote age = if age >= 18 then "You can vote!" else "You have to wait " ++ show ( 18 - age ) ++ " years to vote."
+
+10. putStrLn "Start Stop Delta"
+    stuff <- getLine
+    let nums = map ( \x -> read x :: Int ) ( words stuff )
+    putStrLn $ show $ thing nums
+
+    thing ( start:stop:delta:[] )
+     | list == [] = error "U_SuC_LOL"
+     | otherwise = list
+     where list = [start,(start + delta)..stop]

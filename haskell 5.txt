@@ -1,0 +1,50 @@
+Haskell Question Set 5
+
+1. 1 + 1 is of type Num. Num is a typeclass for all numbers
+
+2. max is of type Ord which takes in two Ords and returns the Ord with the largest value
+
+3. average :: Integer -> Integer -> Double
+
+4. mode :: Eq a => [a] -> a
+
+5. Int stands for integer and are used for whole numbers( ex: 7 ). Ints are bounded and have a minimum value( -2147483648 ) and a maximum value( 2147483647 ).
+   Integer also stands for integer. However, Integers are not bounded and can represent really, really, big numbers.
+   Integral is a numeric class and includes only whole numbers. In this typeclass are Int and Integer.
+
+6. If you were to write a function that finds the second largest piece of information in a list of an unknown type, you can determine 
+   that the type has to be of type Ord because the type has to be ordered in some way for you to find the second largest piece of information
+
+7. trapezoid :: Double -> Double -> Double -> Double
+
+   trapezoid top bottom height = ( top + bottom ) / 2 * height
+
+8. tails :: [a] -> [a]
+
+   tails ( x: list ) = list
+
+9. pythagorean :: Integer -> Integer -> Integer -> Bool
+
+   pythagorean a b c = a^2 + b^2 == c^2
+
+10. isAscendingOrder :: Ord a => [a] -> Bool
+
+    isAscendingOrder [] = True
+
+    isAscendingOrder [x] = True
+
+    isAscendingOrder ( x:y:list ) = x <= y && isAscendingOrder list
+
+11. subt :: [Char] -> [Char] -> Integer
+
+    subt x y = ( read x :: Integer ) - ( read y :: Integer )
+
+12. import Data.List
+    avg :: Fractional a => [a] -> a
+
+    avg list = (sum list) / (genericLength list)
+
+13. lister :: [String] -> [Double]
+    lister list = map ( read ) list
+
+14. Both AP students and toddlers are only taught to learn one thing and not the whole picture.

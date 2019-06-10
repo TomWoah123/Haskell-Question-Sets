@@ -1,0 +1,34 @@
+Haskell Question Set 2
+
+1. length "your name"
+
+2. "racecar" == reverse "racecar"
+
+3. half s = drop (length s `quot` 2) s
+
+4. fHalf s = take (length s `quot` 2) s
+
+5. bigMax xs ys = max ( maximum xs ) ( maximum ys )
+
+6. contains list x y = x `elem` list && y `elem` list
+
+7. length ['A'..'z']
+
+8. list = [100,99..0]
+
+9. letter = ['A','C'..'Z']
+
+10. length [0.05,0.10..1000000]
+
+11. take 100 [0,2..]
+
+12. firstXEven num x = map (num+) (take x [0,2..])
+
+13. cryptKey st x = take x ( cycle st )
+
+14. copyString st x = take (length st * x) (cycle st)
+
+15. copyString st x = unwords ( replicate x st )
+
+16. Every if needs an else in haskell because every function 
+    in haskell has to return something

@@ -1,0 +1,76 @@
+Haskell Question Set 6
+
+1. validate :: String -> String
+   validate "Timothy" = "First Name"
+   validate "Patrick" = "Middle Name"
+   validate "wu" = "Last Name"
+   validate str = "Stranger Danger!"
+
+2. colorName :: (Int,Int,Int) -> String
+   first (a,_,_) = a
+   second (_,b,_) = b
+   third (_,_,c) = c
+   colorName (255,255,255) = "White"
+   colorName (0,0,0) = "Black"
+   colorName (255,0,0) = "Red"
+   colorName (0,255,0) = "Green"
+   colorName (0,0,255) = "Blue"
+   colorName trip = if ( first trip <= 0 || first trip >= 255 || second trip <= 0 || second trip >= 255 || third trip <= 0 || third trip >= 255 ) then "Not a color" else if ( first trip == second trip && second trip == third trip ) then "Shade of Gray" else "(#,#,#)"
+
+3. If a number other than 1, 2, or 3 comes in the function, then the function would throw an error.
+
+4. blah 1 = "Deposit"
+   blah 2 = "Withdraw"
+   blah 3 = "Log out"
+   blah x = blah x
+   You will never reach the result of the function if the person always chooses a menu choice outside of 1, 2, or 3.
+
+5. import Data.List
+   average :: Fractional a => [a] -> a
+   average [] = error "u stupid"
+   average list = ( sum list ) / ( genericLength list )
+
+6. firstThree [] = []
+   firstThree (x:[]) = [x]
+   firstThree (x:y:[]) = [x,y]
+   firstThree (x:y:z:_) = [x,y,z]
+
+7. tail' :: [a] -> [a]
+   tail' [] = error "u stupid"
+   tail' list = drop 1 list
+
+8. power :: Int -> Int -> Int
+   power x 1 = x
+   power x y = x * power x (y - 1)
+
+9. grade :: Integer -> String
+   grade num
+    | num > 100 = "Liar"
+    | num >= 90 = "A"
+    | num >= 80 = "B"
+    | num >= 70 = "C"
+    | num >= 60 = "D"
+    | num >= 0 = "F"
+    | otherwise = "Liar"
+
+10. stringThing :: String -> String -> String
+    stringThing xs ys
+     | null xs || null ys = ""
+     | otherwise = [( last xs )] ++ [( last ys )] ++ stringThing ( init xs ) ( init ys )
+
+11. coord :: (Float,Float) -> (Float,Float) -> String
+    coord tup1 tup2
+     | dist <= 1 = "Very Close"
+     | dist <= 5 = "Close"
+     | dist <= 100 = "Somewhat near"
+     | otherwise = "Far away"
+    where dist = sqrt ( (fst tup2 - fst tup1)^2 + (snd tup2 - snd tup1)^2 )
+
+12. initials :: String -> String -> String
+    initials firstname lastname = [f] ++ "." ++ [l] ++ "."  
+       where (f:_) = firstname  
+             (l:_) = lastname  
+
+13. triangle :: Int -> Int -> [(Int,Int,Int)]
+    triangle x y = [ (a,b,c) | a <- [x..y], b <- [x..y], c <- [x..y], isTriangle a b c ]
+       where  isTriangle a b c =  a + b > c && a + c > b && b + c > a

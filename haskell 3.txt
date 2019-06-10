@@ -1,0 +1,53 @@
+Haskell Question Set 3
+
+1. div (-9) 4 -> -3
+   quot (-9) 4 -> -2
+   quot is the equivalent to Java's integer division
+
+2. rem (-13) 3 -> -1
+   mod (-13) 3 -> 2
+   rem is the equivalent to Java's modulus
+
+3. divMod takes 2 integers and returns the result of the div function and the mod function
+   quotRem takes 2 integers and returns the result of the quot function and the rem function
+   
+   divMod (-17) 5 -> (-4,3)
+   quotRem (-17) 5 -> (-3,-2)
+
+4. ^ raises the number before it to a certain power
+   3^2 -> 9
+   3^2^1 -> 9
+   3^2^2 -> 81
+   3^2^3 -> 6561
+   3^2^4 -> 43046721
+   3^2^5 -> 1853020188851841
+
+5. The ord class can use max and min
+   The other method available is compare
+   The Eq class can use ==
+   The opposite of == is /=
+   6 - 3 = 3, even 3 = False, odd 3 = True, gcd 6 4 = 2, lcm 6 4 = 12, 3^2 = 9, 3^^2 = 9.0
+
+6. [x^3 + 3*x^2 + 3 | x <- [1..20]]
+
+7. take 10 [ x | x <- [500..], x `mod` 42 == 0 ]
+
+8. multiple a b c = if a > b then [ x | x <- [b..a], x `mod` c == 0 ] else [ x | x <- [a..b], x `mod` c == 0]
+
+9. val list num = [x | x <- list, x `mod` num /= 0]
+
+10. hotel height = [x | x <- [1..height], x /= 13]
+
+11. sum [ 27*x^2 - 12*x - 20 | x <- [0..1000] ] -> 9007478480
+
+12. divisor num = length [ x | x <- [1..num], num `mod` x == 0 ]
+
+13. replaceSpaces sentence = map (\s -> if s == ' ' then '_' else s) sentence
+
+14. sentence sent ph = concat $ map (\a -> a:ph) sent
+
+15. tupli = [ (x,y) | x <- [0..9], y <- [0..9] ]
+
+16. combine adjectives nouns = [ adj ++ " " ++ noun | adj <- adjectives, noun <- nouns, head adj == head noun ]
+
+17. leapYear start end = [ x | x <- [start..end], x `mod` 400 == 0 || ( x `mod` 4 == 0 && x `mod` 100 /= 0 ) ]
