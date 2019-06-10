@@ -22,13 +22,13 @@ Haskell Question Set 1
 
 11. add x = xs ++ [x]
 
-12.	adds x = [x] ++ xs
+12. adds x = [x] ++ xs
 
-13.	“ubba”
+13. “ubba”
 
-14.	“bubb”
+14. “bubb”
 
-15.	‘b’
+15. ‘b’
 
-16.	‘a’
+16. ‘a’
 
